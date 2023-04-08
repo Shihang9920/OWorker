@@ -12,7 +12,7 @@
                     <span>服务器管理</span>
                 </a-menu-item>
                 <a-menu-item key="3" @click="goToTask">
-                    <FileDoneOutlined />
+                    <FileDoneOutlined/>
                     <span>任务管理</span>
                 </a-menu-item>
                 <a-sub-menu key="sub1">
@@ -43,7 +43,9 @@
             </a-menu>
         </a-layout-sider>
         <a-layout>
-            <a-layout-header style="background: #fff; padding: 0"/>
+            <a-layout-header style="background: #fff; padding: 0">
+                <TopBar/>
+            </a-layout-header>
             <a-layout-content style="margin: 0 16px">
 
                 <a-breadcrumb style="margin: 16px 0">
@@ -53,7 +55,6 @@
 
                 <div :style="{ padding: '24px', background: '#fff', minHeight: '360px' }">
                     <router-view/>
-
                 </div>
             </a-layout-content>
             <a-layout-footer style="text-align: center">
@@ -63,12 +64,21 @@
     </a-layout>
 </template>
 <script>
-import {PieChartOutlined, DesktopOutlined, UserOutlined, TeamOutlined, FileOutlined,FileDoneOutlined} from '@ant-design/icons-vue';
+import {
+    PieChartOutlined,
+    DesktopOutlined,
+    UserOutlined,
+    TeamOutlined,
+    FileOutlined,
+    FileDoneOutlined
+} from '@ant-design/icons-vue';
 import {defineComponent, ref} from 'vue';
 import router from "@/router";
+import TopBar from "@/components/topbar/TopBar.vue";
 
 export default defineComponent({
     components: {
+        TopBar,
         PieChartOutlined,
         DesktopOutlined,
         UserOutlined,
@@ -89,7 +99,7 @@ export default defineComponent({
         goToDashboard() {
             router.push('/dashboard')
         },
-        goToTask(){
+        goToTask() {
             router.push('/task')
         }
     }

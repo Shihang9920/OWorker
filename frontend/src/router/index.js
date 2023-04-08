@@ -1,8 +1,8 @@
 import {createRouter, createWebHistory} from "vue-router";
 import MainLayout from "@/components/MainLayout.vue";
 import ServerList from "@/components/server/ServerList.vue";
-import UserList from "@/components/UserList.vue";
-import DashBoard from "@/components/DashBoard.vue";
+import UserList from "@/components/user/UserList.vue";
+import DashBoard from "@/components/dashboard/DashBoard.vue";
 import TaskPage from "@/components/task/TaskPage.vue";
 
 const routes = [
